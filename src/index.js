@@ -1,8 +1,8 @@
-import '@babel/polyfill';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-async function init() {
+// application entry point
+(async function main() {
+  // throw your code here
+}());
 
-}
-
-// wait for the page to be fully loaded before launching app
-window.addEventListener('load', init);
