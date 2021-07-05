@@ -25,7 +25,7 @@ module.exports = {
             ],
             plugins: [
               ['@babel/plugin-transform-arrow-functions'], // for iOS 9 : https://caniuse.com/arrow-functions
-              ['@babel/plugin-proposal-class-properties', { loose : true }]
+              ['@babel/plugin-proposal-class-properties']
             ],
           },
         },

@@ -13,6 +13,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "@ircam/resume-audio-context": "^1.0.2",
     "core-js": "^3.8.3",
     "regenerator-runtime": "^0.13.7"
   },
