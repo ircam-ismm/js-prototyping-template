@@ -5,11 +5,17 @@ module.exports = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   output: {
-    filename: '.bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public', '.build'),
   },
   module: {
     rules: [
+      {
+        test: /\.worklet\.js$/,
+        use: {
+          loader: 'worklet-loader'
+        },
+      },
       {
         test: /\.(js|mjs)$/,
         // 'exclude': /node_modules/,
@@ -25,7 +31,7 @@ module.exports = {
             ],
             plugins: [
               ['@babel/plugin-transform-arrow-functions'], // for iOS 9 : https://caniuse.com/arrow-functions
-              ['@babel/plugin-proposal-class-properties', { loose : true }]
+              ['@babel/plugin-proposal-class-properties']
             ],
           },
         },
