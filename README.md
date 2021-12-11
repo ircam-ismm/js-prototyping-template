@@ -1,17 +1,17 @@
 # `js-prototyping-template`
 
-> Simple starter project for fast testing and prototyping with recent JavaScript
+> Simple starter project for the rapid prototyping of WebAudio stuff
 
-Basically a simple and ready to use webpack configuration.
+Basically a simple and ready to use webpack configuration, with few helpers and libraries.
 
-## Install
+## Install & Run
 
 ```
 npm install 
 npm run dev
 ```
 
-Your application will be accessible at `http://localhost:5000/`
+The application accessible at `http://localhost:5000/`, and the code in `src` is ready to be hacked.
 
 ## Some features
 
@@ -26,11 +26,11 @@ Your application will be accessible at `http://localhost:5000/`
 
 #### `npm run dev`
 
-launch the server and, watch the file system and transpile on save
+launch the server and, watch file in `src` and re-transpile on change
 
 #### `npm run build`
 
-build the application
+transpile the application
 
 #### `npm run start`
 
