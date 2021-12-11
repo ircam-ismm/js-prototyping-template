@@ -19,6 +19,8 @@ Your application will be accessible at `http://localhost:5000/`
 - Use [worklet-loader](https://github.com/reklawnos/worklet-loader) to simplify `AudioWorklet` prototyping (see `examples/audio-worlet`)
 - Provide some GUI components to simplify the creation of interfaces (cf. [@ircam/simple-components](https://github.com/ircam-ismm/simple-components))
 - Use `lit-html` for DOM rendering - *@todo - update to lit#v2)*
+- Provide clean headers to enable  `self.crossOriginIsolated` advanced features such as
+`SharedArrayBuffer` or high precision timers. see https://web.dev/why-coop-coep/
 
 ## Available commands
 

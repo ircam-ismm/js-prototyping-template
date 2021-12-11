@@ -7,6 +7,8 @@ import { resumeAudioContext } from '@ircam/resume-audio-context';
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 
+console.info('> self.crossOriginIsolated', self.crossOriginIsolated);
+
 (async function main() {
   await resumeAudioContext(audioContext);
 
