@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@ircam/resume-audio-context": "^1.0.2",
-    "@ircam/simple-components": "^1.2.5",
+    "@ircam/simple-components": "file:../simple-components",
     "core-js": "^3.8.3",
-    "lit-html": "^1.4.1",
+    "lit": "^2.2.2",
     "regenerator-runtime": "^0.13.7"
   },
   "scripts": {
