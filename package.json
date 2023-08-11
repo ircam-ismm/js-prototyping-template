@@ -1,12 +1,8 @@
 {
-  "name": "js-prototyping-boilerplate",
+  "name": "js-prototyping-template",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-transform-arrow-functions": "^7.18.6",
-    "@babel/preset-env": "^7.20.2",
-    "babel-loader": "^9.1.0",
     "npm-run-all": "^4.1.5",
     "serve": "^14.1.2",
     "webpack": "^5.75.0",
@@ -14,15 +10,14 @@
   },
   "dependencies": {
     "@ircam/resume-audio-context": "^1.0.2",
-    "@ircam/simple-components": "^2.2.2",
-    "core-js": "^3.26.1",
-    "lit": "^2.4.1",
-    "regenerator-runtime": "^0.13.11"
+    "@ircam/sc-components": "^3.0.0-alpha.31",
+    "lit": "^2.4.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch",
+    "build:prod": "webpack --config webpack.config.js --env=production",
     "dev": "npm-run-all build --parallel start watch",
-    "start": "serve public --config ../serve.json --listen 5000"
+    "start": "serve --config ./serve.json --listen 5000",
+    "watch": "webpack --config webpack.config.js --watch"
   }
 }

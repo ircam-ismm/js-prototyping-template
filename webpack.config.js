@@ -1,43 +1,25 @@
-const path = require('path');
+import path from 'node:path';
+import * as url from 'node:url';
 
-module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
-  devtool: 'eval-cheap-module-source-map',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public', '.build'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.worklet\.js$/,
-        use: {
-          loader: 'worklet-loader'
-        },
-      },
-      {
-        test: /\.(js|mjs)$/,
-        // 'exclude': /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env',
-                {
-                  targets: 'ios >= 9, not ie 11, not op_mini all',
-                }
-              ]
-            ],
-            plugins: [
-              ['@babel/plugin-transform-arrow-functions'], // for iOS 9 : https://caniuse.com/arrow-functions
-              ['@babel/plugin-proposal-class-properties']
-            ],
-          },
-        },
-      },
-    ],
-  },
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+export default env => {
+  let options = {};
+
+  if (env.production) {
+    options.mode = 'production';
+  } else {
+    options.mode = 'development';
+    options.devtool = 'eval-cheap-module-source-map';
+  }
+
+  return {
+    entry: './src/index.js',
+    ...options,
+    output: {
+      filename: 'bundle.js',
+      path: path.join(path.resolve(__dirname), 'build'),
+    },
+  };
 };
-
-

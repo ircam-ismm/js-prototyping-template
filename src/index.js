@@ -1,9 +1,6 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import { render, html } from 'lit/html.js';
 import { resumeAudioContext } from '@ircam/resume-audio-context';
-
-import '@ircam/simple-components/sc-bang.js';
+import '@ircam/sc-components';
 
 console.info('> self.crossOriginIsolated', self.crossOriginIsolated);
 
@@ -14,7 +11,7 @@ const audioContext = new AudioContext();
   await resumeAudioContext(audioContext);
 
   render(html`
-    <h2>js-prototyping-template</h2>
+    <h2>Hello</h2>
     <sc-bang
       @input="${e => {
         const osc = audioContext.createOscillator();
